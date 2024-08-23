@@ -12,3 +12,9 @@ data "google_service_account_access_token" "default" {
  scopes                 	= ["userinfo-email", "cloud-platform"]
  lifetime               	= "1200s"
 }
+
+provider "google" {
+ project 		= cauthen_sandbox
+ access_token	= data.google_service_account_access_token.default.access_token
+ request_timeout 	= "60s"
+}
