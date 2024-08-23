@@ -18,9 +18,9 @@ data "google_service_account_access_token" "default" {
 }
 
 provider "google" {
- project 		= cauthen_sandbox
+ project 		= "cauthen_sandbox"
  region     = "us-west1"
  zone       = "us-west1-a"
- access_token	= var.data.google_service_account_access_token.default.access_token
+ access_token	= data.google_service_account_access_token.default.access_token
  request_timeout 	= "60s"
 }
