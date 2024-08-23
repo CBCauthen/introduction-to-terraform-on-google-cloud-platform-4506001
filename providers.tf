@@ -1,3 +1,6 @@
+locals {
+ terraform_service_account = "terraform@cauthen-sandbox.iam.gserviceaccount.com"
+}
 
 provider "google" {
  alias = "impersonation"
